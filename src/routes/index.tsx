@@ -77,7 +77,7 @@ function AzHome() {
       </section>
 
       {/* ---- What's happening without me ---- */}
-      <div className="min-h-0 flex-1 space-y-2 overflow-y-auto px-4 pb-1">
+      <div className="fade-edges min-h-0 flex-1 space-y-2 overflow-y-auto px-4 pt-1 pb-3">
         {snapshot.approval && (
           <ApprovalCard
             request={snapshot.approval}
