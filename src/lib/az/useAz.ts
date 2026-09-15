@@ -31,13 +31,8 @@ export function useAz() {
       setSnapshot((s) => {
         if (s.state === "listening" || s.state === "awaiting_approval") return s;
         const cycle: AzState[] = ["working", "researching", "thinking", "working"];
-        const next = cycle[Math.floor(Math.random() * cycle.length)];
-        const lines = AZ_LINES[next];
-        return {
-          ...s,
-          state: next,
-          line: lines ? lines[Math.floor(Math.random() * lines.length)] : s.line,
-        };
+        const next: AzState = cycle[Math.floor(Math.random() * cycle.length)] ?? "working";
+        return { ...s, state: next, line: pickLine(next, s.line) };
       });
     }, 11000);
 
