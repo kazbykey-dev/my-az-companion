@@ -69,11 +69,11 @@ function Props({ state }: { state: AzState }) {
         <g>
           {/* tiny laptop */}
           <g className="anim-bob">
-            <rect x="44" y="92" width="32" height="4" rx="2" fill="currentColor" opacity="0.75" />
-            <path d="M48 92 L52 76 h16 l4 16 z" fill="currentColor" opacity="0.35" />
-            <rect x="53" y="78" width="14" height="11" rx="1.6" fill="var(--background)" />
-            <rect x="55" y="81" width="9" height="1.6" rx="0.8" fill="currentColor" opacity="0.8" />
-            <rect x="55" y="84.5" width="6" height="1.6" rx="0.8" fill="currentColor" opacity="0.5" />
+            <rect x="44" y="112" width="32" height="4" rx="2" fill="currentColor" opacity="0.75" />
+            <path d="M48 112 L52 96 h16 l4 16 z" fill="currentColor" opacity="0.35" />
+            <rect x="53" y="98" width="14" height="11" rx="1.6" fill="var(--background)" />
+            <rect x="55" y="101" width="9" height="1.6" rx="0.8" fill="currentColor" opacity="0.8" />
+            <rect x="55" y="104.5" width="6" height="1.6" rx="0.8" fill="currentColor" opacity="0.5" />
           </g>
         </g>
       );
@@ -82,15 +82,15 @@ function Props({ state }: { state: AzState }) {
         <g className="anim-bob" opacity="0.85">
           {/* magnifier */}
           <circle
-            cx="88"
-            cy="84"
+            cx="92"
+            cy="96"
             r="9"
             fill="none"
             stroke="currentColor"
             strokeWidth="3"
             opacity="0.9"
           />
-          <path d="M95 91 l7 7" stroke="currentColor" strokeWidth="3.4" strokeLinecap="round" />
+          <path d="M99 103 l7 7" stroke="currentColor" strokeWidth="3.4" strokeLinecap="round" />
         </g>
       );
     case "thinking":
@@ -178,7 +178,7 @@ export function AzCharacter({ state, className }: { state: AzState; className?: 
     >
       {/* halo */}
       <div
-        className="anim-halo pointer-events-none absolute size-[15rem] rounded-full blur-2xl"
+        className="anim-halo pointer-events-none absolute size-[11.5rem] rounded-full blur-2xl"
         style={{
           background: `radial-gradient(circle, ${tone} 0%, transparent 68%)`,
           opacity: isAsleep ? 0.3 : 0.6,
@@ -186,26 +186,26 @@ export function AzCharacter({ state, className }: { state: AzState; className?: 
       />
       {/* orbit ring */}
       <div
-        className="anim-spin-slow pointer-events-none absolute size-[13.5rem] rounded-full border border-dashed opacity-25"
+        className="anim-spin-slow pointer-events-none absolute size-[10.5rem] rounded-full border border-dashed opacity-25"
         style={{ borderColor: tone }}
       />
       {state === "listening" && (
         <>
           <span
-            className="pointer-events-none absolute size-[11rem] rounded-full border-2"
+            className="pointer-events-none absolute size-[9rem] rounded-full border-2"
             style={{ borderColor: tone, animation: "az-pulse-ring 2s ease-out infinite" }}
           />
           <span
-            className="pointer-events-none absolute size-[11rem] rounded-full border-2"
+            className="pointer-events-none absolute size-[9rem] rounded-full border-2"
             style={{ borderColor: tone, animation: "az-pulse-ring 2s ease-out 1s infinite" }}
           />
         </>
       )}
 
       <svg
-        viewBox="0 0 120 120"
+        viewBox="-6 -22 132 156"
         className={cn(
-          "relative size-[12.5rem] drop-shadow-[0_18px_40px_rgba(0,0,0,.45)]",
+          "relative size-[10.5rem] drop-shadow-[0_18px_40px_rgba(0,0,0,.45)]",
           isAsleep ? "anim-breathe" : "anim-float",
           state === "error" && "anim-shake",
         )}
