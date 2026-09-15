@@ -1,0 +1,11 @@
+{
+  "name": "アズ (AZ)",
+  "short_name": "アズ",
+  "description": "iPhoneに棲む、あなたのAIパートナー。",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1a1726",
+  "theme_color": "#1a1726",
+  "icons": [{ "src": "/favicon.ico", "sizes": "48x48", "type": "image/x-icon" }]
+}
