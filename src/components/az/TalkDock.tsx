@@ -78,7 +78,7 @@ export function TalkDock({
           >
             <span
               className={cn(
-                "relative grid size-[4.6rem] place-items-center rounded-full bg-primary text-primary-foreground transition-transform duration-200 active:scale-95",
+                "relative grid size-[4.2rem] place-items-center rounded-full bg-primary text-primary-foreground transition-transform duration-200 active:scale-95",
                 listening && "scale-105",
               )}
               style={{ boxShadow: "var(--shadow-az)" }}

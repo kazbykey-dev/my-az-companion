@@ -63,21 +63,21 @@ function AzHome() {
       </header>
 
       {/* ---- The stage: アズ is always the hero ---- */}
-      <section className="relative flex flex-1 flex-col items-center justify-center px-5">
-        <AzCharacter state={snapshot.state} className="mt-2" />
+      <section className="relative flex min-h-0 flex-1 flex-col items-center justify-center px-5 py-1">
+        <AzCharacter state={snapshot.state} />
 
         <p
           key={snapshot.line}
-          className="anim-rise mt-4 max-w-[19rem] text-center font-display text-[17px] leading-relaxed font-bold text-foreground"
+          className="anim-rise mt-1 max-w-[19rem] text-center font-display text-[15.5px] leading-relaxed font-bold text-foreground"
         >
           {snapshot.line}
         </p>
 
-        <StateBadge state={snapshot.state} className="mt-3" />
+        <StateBadge state={snapshot.state} className="mt-2.5" />
       </section>
 
       {/* ---- What's happening without me ---- */}
-      <div className="space-y-2.5 px-4">
+      <div className="space-y-2 px-4">
         {snapshot.approval && (
           <ApprovalCard
             request={snapshot.approval}
@@ -89,7 +89,7 @@ function AzHome() {
         <RevenueCard amount={snapshot.realizedRevenueJpy} />
       </div>
 
-      <div className="pt-3">
+      <div className="pt-2.5">
         <TalkDock
           contextAction={presentation.contextAction}
           listening={snapshot.state === "listening"}
