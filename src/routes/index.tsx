@@ -51,7 +51,7 @@ function AzHome() {
   }, [snapshot.state, resolveApproval, setState, requestApproval]);
 
   return (
-    <div className="star-field flex min-h-dvh flex-col">
+    <div className="star-field flex h-dvh flex-col overflow-hidden">
       <header className="safe-top flex items-center justify-between px-5">
         <p className="text-[12px] text-muted-foreground">
           {snapshot.ownerName}のアズ
@@ -63,7 +63,7 @@ function AzHome() {
       </header>
 
       {/* ---- The stage: アズ is always the hero ---- */}
-      <section className="relative flex min-h-0 flex-1 flex-col items-center justify-center px-5 py-1">
+      <section className="relative flex shrink-0 flex-col items-center justify-center px-5 pt-1 pb-2">
         <AzCharacter state={snapshot.state} />
 
         <p
@@ -77,7 +77,7 @@ function AzHome() {
       </section>
 
       {/* ---- What's happening without me ---- */}
-      <div className="space-y-2 px-4">
+      <div className="min-h-0 flex-1 space-y-2 overflow-y-auto px-4 pb-1">
         {snapshot.approval && (
           <ApprovalCard
             request={snapshot.approval}
@@ -89,7 +89,7 @@ function AzHome() {
         <RevenueCard amount={snapshot.realizedRevenueJpy} />
       </div>
 
-      <div className="pt-2.5">
+      <div className="shrink-0 pt-2">
         <TalkDock
           contextAction={presentation.contextAction}
           listening={snapshot.state === "listening"}
