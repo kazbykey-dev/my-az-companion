@@ -11,14 +11,7 @@ export function useAz() {
   const [snapshot, setSnapshot] = useState<AzSnapshot>(initialSnapshot);
 
   const setState = useCallback((state: AzState) => {
-    setSnapshot((s) => {
-      const lines = AZ_LINES[state];
-      return {
-        ...s,
-        state,
-        line: lines ? lines[Math.floor(Math.random() * lines.length)] : s.line,
-      };
-    });
+    setSnapshot((s) => ({ ...s, state, line: pickLine(state, s.line) }));
   }, []);
 
   // Ambient life: activities keep creeping forward, AZ drifts between
