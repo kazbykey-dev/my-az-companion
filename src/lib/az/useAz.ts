@@ -7,6 +7,12 @@ import type { AzSnapshot, AzState } from "./types";
  * Today it drives itself from mock data on a timer; later this hook can
  * subscribe to server events / websockets and keep the same return shape.
  */
+function pickLine(state: AzState, fallback: string): string {
+  const lines = AZ_LINES[state];
+  if (!lines || lines.length === 0) return fallback;
+  return lines[Math.floor(Math.random() * lines.length)] ?? fallback;
+}
+
 export function useAz() {
   const [snapshot, setSnapshot] = useState<AzSnapshot>(initialSnapshot);
 
